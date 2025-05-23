@@ -9,6 +9,15 @@
 <p>
     @Html.ActionLink("Create New", "Create", "User")
 </p>
+
+<form method="get" action="@Url.Action("Index", "User")" class="form-inline mb-3">
+    <div class="form-group">
+        <label for="searchName">Find by name:</label>
+        <input type="text" name="searchName" id="searchName" class="form-control mx-2" value="@ViewContext.HttpContext.Request.Query["searchName"]" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
 <table class="table">
     <tr>
         <th>
